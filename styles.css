@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    /*background-color:#8893ea;*/
+    background-color: #e6e9f0;
+}
+
+#main-container {
+  display:none;
+}
+
+/* TEMPERATURA ACTUAL, ICONO, DESCRIPCION*/
+.currentTemp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.inputTempNumber {
+  display: flex;
+  align-items: center;
+}
+
+.inputTempCelsius {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 6rem;
+}
+
+.inputTempSymbol {
+  font-size: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.weatherIcon > img {
+  width: 11rem;
+  margin-left: 1.5rem;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+.more-details {
+  color:black;
+  text-decoration: none;
+}
+
+/* BUSQUEDA Y UBICACION*/
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align:end;
+}
+
+.date-container {
+  display:flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.searchSubmit {
+  display: flex;
+  visibility: hidden;
+}
+
+.search {
+  padding: .3rem;
+  margin-top: .3rem;
+  border-radius: .5rem;
+  border:none;
+}
+
+.search:focus{
+  outline: none;
+}
+
+.location {
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+}
+.locationCity {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+/* PROXIMOS DIAS*/
+.days-container {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  position: fixed;
+  bottom: 1rem;
+	width: 100%;
+  height: 18rem;
+	border: 1px solid#8893ea;
+  border-radius: 10px;
+  background-color: #fff;
+  /*#cdd3ff;*/
+  
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  padding: .1rem;
+  box-shadow: 2px 2px 10px #666;
+}
+
+.day:nth-child(2){
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.day {
+  height: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.dayAnimatedIcon {
+  vertical-align: middle;
+  width: 3rem;
+}
+
+.inputTempDescription {
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+
+.weather {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0.1;
+}
+
+.weatherMin >span {
+  font-size: 1.4rem;
+  color: blue;
+}
+
+.weatherMax >span {
+  font-size: 1.4rem;
+  color:tomato;
+}
+
+/* VENTANA MODAL Y TABLA */
+
+.modal-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-row{
+  display: flex;
+  width: 100%;
+  height: 7rem;
+  text-align: center;
+}
+.modal-cell{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.cell-1, .cell-2 {
+  border-top: 1px solid black;
+}
+
+.cell-3, .cell-4 {
+  border-top: 1px solid black;
+}
+
+.cell-1, .cell-3 {
+  border-right: 1px solid black;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+ 
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #e6e9f0;
+  border-radius: 10px;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  /*padding: 2px 16px;*/
+  padding: 1rem;
+  background-color: #e6e9f0;
+  color: black;
+  font-size: 1.5rem;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: .1rem;
+  background-color: #e6e9f0;
+  color: #e6e9f0;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+
+
+
+/* -------ANIMACION--------------- */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

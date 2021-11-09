@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Wheater App</title>
+</head>
+<body>
+    
+        <!-- BUSCAR CIUDAD Y UBICACION -->
+        <div class="form-container">
+            <div class="date-container">
+                <div class="locationDate" id="date"></div>
+                <span class="lastUpdated" id="lastUpdated"></span>
+            </div>
+
+            <div class="location">
+                <div class="locationCity" id="timeZone"></div>
+            </div>
+
+            <form class="searchCity" id="searchCity">
+                <input type="text" class="search" id="searchInput" placeholder="Tu ciudad...">
+                <button class="searchSubmit" type="submit"></button>
+            </form>
+        </div>
+    
+        <!-- GRADOS, ICONO Y DESCRIPCION-->
+        <div class="currentTemp-container">
+            <div class="inputTempNumber">
+                <div class="inputTempCelsius" id="degreeNumber"></div>
+                <div class="inputTempSymbol">ºC</div>
+            </div>
+            <div class="weatherIcon">
+                <img id="animatedIcon" src="" >
+            </div>
+        </div>
+
+        <div class="description-container">
+            <div class="inputTempDescription" id="description"></div>
+            <div class="more-details">
+                <a href="#" class="more-details" id="myBtn">Más detalles ></a>
+            </div>
+        </div>
+        
+    <!-- PROXIMOS 3 DIAS-->
+        <div id="days-container" class="days-container">
+            <div class="day">
+                <img class="dayAnimatedIcon" id="dayIcon-1" src="">
+                <span id="day-date-1" class="day-date"></span>
+            </div>
+            <div class="day">
+                <img class="dayAnimatedIcon" id="dayIcon-2" src="">
+                <span id="day-date-2" class="day-date"></span>
+            </div>
+            <div class="day">
+                <img class="dayAnimatedIcon" id="dayIcon-3" src="">
+                <span id="day-date-3" class="day-date"></span>
+            </div>
+        </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <span>Detalles</span>
+            </div>
+            <div class="modal-body">
+                
+                <div class="modal-table">
+                    <div class="modal-row">
+                        <div class="modal-cell cell-1">
+                            <span>Humedad</span>
+                            <span id="humidity"></span>
+                        </div>
+                        <div class="modal-cell cell-2">
+                            <span>Presión</span>
+                            <span id="pressure"></span>
+                        </div>
+                    </div>
+                    <div class="modal-row">
+                        <div class="modal-cell cell-3">
+                            <span>Sensación térmica</span>
+                            <span id="feel-like"></span>
+                        </div>
+                        <div class="modal-cell cell-4">
+                            <span>Viento</span>
+                            <span id="wind"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+  
+
+
+<div id="loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+    <!--<div class="circle button" id="button-0"></div>-->
+    <script src="index.js"></script>
+</body>
+</html>
